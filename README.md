@@ -2,7 +2,7 @@
 
 ## 🎯 Objetivo
 
-Este projeto foi desenvolvido com o propósito de aplicar e consolidar boas práticas no desenvolvimento em Java, explorando conceitos como POO, organização em camadas (MVC) e testes automatizados.
+Este repositório foi desenvolvido com o propósito de apoiar meu aprendizado em Java, aplicando e consolidando boas práticas de desenvolvimento, como a Programação Orientada a Objetos (POO), a organização em camadas utilizando o padrão MVC e a escrita de testes automatizados. A proposta é unir teoria e prática em um projeto simples, porém bem estruturado, que sirva como base para futuros aprimoramentos e como parte do meu portfólio técnico.
 
 ---
 
