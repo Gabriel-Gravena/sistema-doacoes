@@ -45,7 +45,7 @@ public class DoadorService {
         return new ArrayList<>(doadores);
     }
 
-    public List<Doador> getDoadorPorNome(String nome) {
+    public List<Doador> getDoadoresPorNome(String nome) {
         if(nome == null || nome.isBlank()) {
             throw new IllegalArgumentException  ("O nome fornecido é inválido.");
         }

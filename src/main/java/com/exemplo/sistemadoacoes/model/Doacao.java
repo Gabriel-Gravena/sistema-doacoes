@@ -1,5 +1,7 @@
 package com.exemplo.sistemadoacoes.model;
 
+import java.util.UUID;
+
 public class Doacao {
     private final Doador doador;
 
@@ -7,12 +9,12 @@ public class Doacao {
 
     private double valorDoacao;
 
-    public Doacao(Doador doador, String id, double valorDoacao) {
-        if (doador == null || id == null || id.isBlank() || valorDoacao <= 0) {
+    public Doacao(Doador doador, double valorDoacao) {
+        if (doador == null || valorDoacao <= 0) {
             throw new IllegalArgumentException("Dados inválidos para criação da doação.");
         }
         this.doador = doador;
-        this.id = id;
+        this.id = UUID.randomUUID().toString();
         this.valorDoacao = valorDoacao;
     }
 
