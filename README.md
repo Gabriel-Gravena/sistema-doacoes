@@ -1,4 +1,4 @@
-# 🩸 Sistema de Doações
+# Sistema de Doações
 
 ## 🎯 Objetivo
 
