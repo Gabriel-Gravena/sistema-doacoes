@@ -1,5 +1,6 @@
 package com.exemplo.sistemadoacoes.service;
 
+import com.exemplo.sistemadoacoes.Exception.DoadorJaCadastradoException;
 import com.exemplo.sistemadoacoes.model.Doador;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class DoadorService {
         }
 
         if (doadores.contains(doador)) {
-            throw new IllegalArgumentException("Doador já cadastrado.");
+            throw new DoadorJaCadastradoException("Doador já cadastrado.");
         }
 
         doadores.add(doador);
