@@ -1,10 +1,10 @@
-package com.exemplo.sistemadoacoes;
+package com.exemplo.sistemadoacoes.view;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class Main
 {
     public static void main( String[] args )
     {
