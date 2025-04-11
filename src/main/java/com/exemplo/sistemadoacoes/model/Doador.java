@@ -63,4 +63,10 @@ public abstract class Doador {
     public int hashCode() {
         return Objects.hash(nome, email, telefone, dataNascimento);
     }
+
+    @Override
+    public String toString() {
+        return String.format("Doador: nome='%s', email='%s', telefone='%s', idade=%d",
+                getNome(), getEmail(), getTelefone(), getIdade());
+    }
 }

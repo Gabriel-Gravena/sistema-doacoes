@@ -22,6 +22,6 @@ public class PessoaFisica extends Doador{
 
     @Override
     public String toString() {
-        return String.format("Pessoa Física: %s - CPF: %s", getNome(), cpf);
+        return String.format("Pessoa Física [CPF=%s] - %s", cpf, super.toString());
     }
 }

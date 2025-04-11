@@ -4,7 +4,6 @@ import com.exemplo.sistemadoacoes.model.Doador;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class DoadorService {
     List<Doador> doadores;
@@ -42,7 +41,7 @@ public class DoadorService {
     }
 
     public List<Doador> getDoadores(){
-        return new ArrayList<>(doadores);
+        return doadores;
     }
 
     public List<Doador> getDoadoresPorNome(String nome) {
@@ -62,7 +61,7 @@ public class DoadorService {
             throw new IllegalArgumentException("Nenhum doador encontrado com o nome fornecido.");
         }
 
-        return doadoresPorNome;
+        return new ArrayList<>(doadoresPorNome);
     }
 
 }

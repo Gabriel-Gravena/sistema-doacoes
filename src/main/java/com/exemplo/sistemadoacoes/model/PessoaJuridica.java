@@ -22,6 +22,6 @@ public class PessoaJuridica extends Doador {
 
     @Override
     public String toString() {
-        return String.format("Pessoa Jurídica: %s - CNPJ: %s", getNome(), cnpj);
+        return String.format("Pessoa Juridica [CNPJ=%s] - %s", cnpj, super.toString());
     }
 }
