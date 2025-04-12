@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoadorService {
-    List<Doador> doadores;
+    private List<Doador> doadores;
 
     public DoadorService() {
         doadores = new ArrayList<>();

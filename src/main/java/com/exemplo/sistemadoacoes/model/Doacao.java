@@ -7,11 +7,11 @@ public class Doacao {
 
     private final String id;
 
-    private double valorDoacao;
+    private final double valorDoacao;
 
     public Doacao(Doador doador, double valorDoacao) {
-        if (doador == null || valorDoacao <= 0) {
-            throw new IllegalArgumentException("Dados inválidos para criação da doação.");
+        if (doador == null) {
+            throw new IllegalArgumentException("O doador nao pode ser nulo");
         }
         this.doador = doador;
         this.id = UUID.randomUUID().toString();

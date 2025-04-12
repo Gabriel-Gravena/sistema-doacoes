@@ -2,6 +2,8 @@ package com.exemplo.sistemadoacoes.model;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Doador {
@@ -12,6 +14,8 @@ public abstract class Doador {
     private String telefone;
 
     private final LocalDate dataNascimento;
+
+    private List<Doacao> doacoes = new ArrayList<>();
 
     public Doador(String nome, String email, String telefone, LocalDate dataNascimento) {
         if (nome == null || nome.isBlank() || email == null || email.isBlank() || telefone == null || telefone.isBlank() || dataNascimento == null) {
@@ -48,25 +52,40 @@ public abstract class Doador {
         return Period.between(dataNascimento, LocalDate.now()).getYears();
     }
 
+    public List<Doacao> getDoacoesList(){
+        return new ArrayList<>(doacoes);
+    }
+
+    public double getTotalDoado() {
+        return doacoes.stream()
+                .mapToDouble(Doacao::getValorDoacao)
+                .sum();
+    }
+
+    public void adicionarDoacao(Doacao doacao) {
+        doacoes.add(doacao);
+    }
+
     public abstract String getDocumentoIdentificador();
 
     public abstract boolean validarIdentificacao();
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Doador doador = (Doador) o;
-        return Objects.equals(nome, doador.nome) && Objects.equals(email, doador.email) && Objects.equals(telefone, doador.telefone) && Objects.equals(dataNascimento, doador.dataNascimento);
+        return getDocumentoIdentificador().equals(doador.getDocumentoIdentificador());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, email, telefone, dataNascimento);
+        return Objects.hash(getDocumentoIdentificador());
     }
 
     @Override
     public String toString() {
-        return String.format("Doador: nome='%s', email='%s', telefone='%s', idade=%d",
-                getNome(), getEmail(), getTelefone(), getIdade());
+        return String.format("Doador: nome='%s', email='%s', telefone='%s', idade=%d, doacoes=%f",
+                getNome(), getEmail(), getTelefone(), getIdade(), getTotalDoado());
     }
 }
